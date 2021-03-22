@@ -1,0 +1,102 @@
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <form action="" method="post">
+                       
+                    <div class="label">Nombre</div>
+                    <input class="form-control" type="text" name="nombre" id="">
+
+                    <div class="label">Correo</div>
+                    <input class="form-control" type="email" name="correo" id="" placeholder="name@example.com">
+
+                    <div class="label">telefono</div>
+                    <input class="form-control" type="numero" name="telefono" id="">
+
+                    <div class="label">Mensaje</div>
+                    <label>
+                        <div class="mb-3">
+                     <textarea class="form-control" type="text" name="mensaje" id="" rows="3" ></textarea>
+                     <br>
+                    </label>
+                    <br>
+                    <button type="submit" class="btn btn-success btn" >Enviar</button>
+                       
+                </form>
+                
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id_formulario</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">telefono</th>
+      <th scope="col">Mensaje</th> 
+    </tr>
+  </thead>
+  <tbody>
+      {{#each regis}}
+    <tr>
+      <th scope="row">{{id_formulario}}</th>
+      <td>{{nombre}}</td>
+      <td>{{correo}}</td>
+      <td>{{telefono}}</td>
+      <td>{{mensaje}}</td>
+      <td>
+            <a href="formulario/{{id_formulario}}" class="btn btn-danger">Eliminar</a>
+
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="editar-formulario/{{id_formulario}}" method="post">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">registro </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                       
+                    <div class="label">Nombre</div>
+                    <input class="form-control" type="text" name="nombre" id="">
+
+                    <div class="label">Correo</div>
+                    <input class="form-control" type="email" name="correo" id="" placeholder="name@example.com">
+
+                    <div class="label">telefono</div>
+                    <input class="form-control" type="numero" name="telefono" id="">
+
+                    <div class="label">Mensaje</div>
+                    <label>
+                        <div class="mb-3">
+                     <textarea class="form-control" type="text" name="mensaje" id="" rows="3" ></textarea>
+                     <br>
+                    </label>
+                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-warning" >Modificate</button>
+
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+            
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+            
+            
+                
